@@ -1,16 +1,26 @@
-
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
-
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Document Previewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Babel to process JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "react": "https://aistudiocdn.com/react@^19.2.0"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-slate-900">
+    <div id="root"></div>
+    <!-- Update the script tag to use babel and point to index.js -->
+    <script type="text/babel" data-type="module" src="/index.js"></script>
+  </body>
+</html>
